@@ -61,6 +61,12 @@
     self.gesture.scrollview = scrollView;
 }
 
+- (void)setGestureHandleView:(UIView *)handleView
+{
+    [self.modalController.view removeGestureRecognizer:self.gesture];
+    [handleView addGestureRecognizer:self.gesture];
+}
+
 - (void)animationEnded:(BOOL)transitionCompleted
 {
     // Reset to our default state
